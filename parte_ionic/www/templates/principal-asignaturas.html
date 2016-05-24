@@ -1,0 +1,18 @@
+<ion-view view-title="Asignaturas">
+  <ion-content>
+    <ion-item>
+      <ion-label>Asigantura</ion-label>
+      <ion-input type="text" ng-model="busqueda"></ion-input>
+    </ion-item>
+    <div><input type="text" ng-model="busqueda"></div>
+    <ion-list>
+      <ion-item ng-repeat="asignatura in  asignaturas | filter: busqueda">
+        <div class="datosPerfil">
+          <p><strong>Nombre: </strong>{{asignatura.nombre}}</p>
+          <p ng-repeat="estudiante in asignatura.estudiantes"><strong>
+            <a ng-click="perfil(estudiante._id)">{{estudiante.nombre}}</a>
+          </strong></p>
+        </div>
+      </ion-item>
+  </ion-content>
+</ion-view>
